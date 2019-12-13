@@ -1,0 +1,8 @@
+<p>
+	async-demo works!
+</p>
+{{result|json}}
+
+<ul>
+	<li *ngFor="let item of (result|async)">{{item.name}} = {{item.age}}</li>
+</ul>

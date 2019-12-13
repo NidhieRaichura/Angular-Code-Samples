@@ -1,0 +1,7 @@
+<app-child-one (childOneMessage)="MessageHandler($event)">
+</app-child-one>
+<section>
+	<p>app-component works!</p>
+	<p> Message from child-one to parent: {{parentMessage}}</p>
+</section>
+<app-child-two [inputMessage]="parentMessage"></app-child-two>

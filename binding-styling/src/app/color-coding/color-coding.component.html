@@ -1,0 +1,13 @@
+<p>
+	color-coding works!
+</p>
+<ul style="list-style:none" *ngFor="let color of rainbow">
+	<li [ngStyle]="{
+    'font-size': '12px',
+    'border': '1px solid',
+    'padding':'15px',
+    'margin':'0 40px 0 0'
+  }"
+  [style.color] = "getColor(color.color)"
+  [style.background]="getColor(color.color)"></li>
+</ul>

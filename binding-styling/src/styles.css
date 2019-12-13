@@ -1,0 +1,37 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.app-style {
+    background: lightslategray;
+    align-content: center;
+    padding: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    border: 1px solid;
+}
+
+
+.grid {
+    float: left;
+    width: 30%;
+    border: 1px solid black;
+    margin: 4px;
+    padding: 2.5px;
+    text-align: center;
+}
+
+.c1-style {
+    background: lightsalmon;
+}
+
+.c2-style {
+    background: khaki;
+}
+
+.c3-style {
+    background: lightgreen;
+}
+
+.color-coding-style {
+    background: lightblue;
+}

@@ -1,0 +1,9 @@
+
+<p>
+c3 works!
+</p>
+<p>{{parentTitle}}</p>
+<input type="text" [(ngModel)]="x" style="width:97%">
+<input type="button" value="Send to child" (click)="sendData()">
+<div class="c2-style"><app-c2 [message]=" 'Hello ' + message" (notify)="onNotify($event)"></app-c2></div>
+{{result}}
