@@ -1,0 +1,20 @@
+div{
+  border: 1px solid black; 
+  margin: 5px; 
+  padding: 5px;
+}
+p{
+  font-size : 1.2em;
+}
+
+.colorClass{
+  color: red;
+}
+
+.boldClass{
+  font-weight: bold;
+}
+
+.italicsClass{
+  font-style:italic;
+}

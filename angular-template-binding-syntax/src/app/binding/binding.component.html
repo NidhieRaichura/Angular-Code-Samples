@@ -1,0 +1,80 @@
+<div>
+	<p>Interpolation & Property Binding</p>
+	<div>
+		<p>Interpolation : C to V</p>
+		<ol>
+			<li>{{firstName}}</li>
+			<li>{{"Name = " + firstName}}</li>
+			<li>{{10 + 20 + 30}}</li>
+			<li>{{firstName? firstName : "No name specified"}}</li>
+			<li><img src='{{image}}' style="width:20%;"/></li>
+	  	<li><img src='https://angular.io/{{imagepath}}' style="width:20%;"/></li>
+      <li>{{"getfullName() = " + getFullName()}}</li>
+      <li><button disabled = {{isDisabled}}>click me</button></li>
+      <li><span>{{badHtml}}</span></li>
+    </ol>
+  </div>
+
+  <div>
+    <p>Property Binding : C to V</p>
+    <ol>
+      <li> <img [src]='image' style="width:20%;"/></li>
+      <li><button [disabled] = 'isDisabled'>click me</button></li>
+ 	    <li> <span innerHtml = 'firstName'></span></li>
+ 	    <li> <span [innerHtml] = 'firstName'></span></li>
+      <li><span [innerHtml] = 'badHtml'     ></span></li>
+    </ol>
+  </div>
+</div>
+
+<div>
+  <p>Class Binding & Style Binding</p>
+  <div>
+    <p> Class Binding : C to V </p>
+    <!-- use [class] to replace all existing css css class with one or more css -->
+    <button class="colorClass"  [class]="classesToApply">Replace Existing CSS class</button><br/> 
+    <!-- add or remove a single css class => [class.className] ; does not remove existing css class-->
+    <button class="colorClass" [class.boldClass]="applyBoldClass">Add single class</button>
+    <button class="colorClass" [class.boldClass]="!applyBoldClass">Negate Single Class</button>
+    <!-- Remove a single css class -->
+    <button class="colorClass italicsClass boldClass" [class.boldClass]="false">Remove Single Class</button><br/>
+    <!-- Add or remove multiple classes using ngClass directive -->
+    <button class="colorClass"  [ngClass]="addClasses()">ngClass directive</button>
+  </div>
+
+  <div>
+    <p>Style Binding : C to V</p>
+    <!-- [style.fontWeight] or [style.font-weight] -->
+    <button style="color: red" [style.font-weight]="isBold ? 'bold' : 'normal'" >Single Inline Style Binding Bold</button>
+    <!-- To set font weight in pixels -->
+    <button style="color: red" [style.font-size.px]="fontSize" >Single Inline Style Binding pixels</button><br/>
+    <!-- Multiple inline styles using ngStyle directive-->
+    <button style="color: red" [ngStyle]="addStyles()" >Multiple Inline Style Binding</button><br/>
+  </div>
+</div>
+
+<div>
+  <p>Event Binding V to C</p>
+  <!-- (click) or canonical form : on-click -->
+  <button (click)="onClick()">Target Event Binding</button><br/><br/>
+  <app-employee></app-employee>
+
+</div>
+
+<div>
+  <p>Two Way Data Binding : C to V & V to C</p>
+  <!-- $event object is exposed by angular data binding and contains event data (value typed in txt box). To get the event data > obj.target.value. This will update name prop within component class  -->
+  Property & Event Data binding:<br/> 
+  <input [value]="name" (input)='name= $event.target.value'/><br/>
+  You Entered : {{name}}<br/><br/>
+
+  <!-- ngModel directive (available in forms module; import in app.module.ts) -->
+  NgModel Directive binding : <br/>
+  <input [(ngModel)] = 'name'><br/>
+  You Entered : {{name}}
+</div>
+
+<div>
+  <p>Built-in Structural Directives : ngIf, ngFor, ngSwitch, ngForOf</p>
+  <app-employee-list></app-employee-list>
+</div>
